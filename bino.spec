@@ -1,7 +1,7 @@
 Summary:            Video Player with 3D and Multi-Display Video Support
 Name:               bino
-Version:            0.9.1
-Release:            1%{?dist}
+Version:            1.1.1
+Release:            2%{?dist}
 
 Source:             http://download.savannah.gnu.org/releases/%{name}/%{name}-%{version}.tar.xz
 Source1:            bino.desktop
@@ -11,12 +11,14 @@ License:            GPLv2
 
 BuildRequires:      qt4-devel
 BuildRequires:      glew-devel >= 1.5.0
-BuildRequires:      ffmpeg-devel
+BuildRequires:      ffmpeg-devel >= 0.7
 BuildRequires:      openal-devel
 BuildRequires:      pkgconfig
 BuildRequires:      autoconf automake libtool
 BuildRequires:      desktop-file-utils
 BuildRequires:      texinfo
+BuildRequires:      libass-devel
+BuildRequires:      libX11-devel
 
 Requires(preun):    /sbin/install-info
 Requires(post):     /sbin/install-info
@@ -33,7 +35,7 @@ Bino is a video player with two special features:
 
 %build
 autoreconf -i
-export LDFLAGS="-lavcodec -lavutil -lGL"
+export LDFLAGS="-lavcodec -lavutil -lGL -lX11"
 %configure --disable-silent-rules
 
 make %{?_smp_mflags}
@@ -72,9 +74,19 @@ update-desktop-database -q
 %{_mandir}/man1/%{name}.1*
 %{_infodir}/%{name}*
 %{_datadir}/applications/%{name}.desktop
-
+/usr/share/locale/cs/LC_MESSAGES/bino.mo
+/usr/share/locale/de/LC_MESSAGES/bino.mo
+/usr/share/locale/fr/LC_MESSAGES/bino.mo
+/usr/share/locale/pl/LC_MESSAGES/bino.mo
+/usr/share/locale/ru/LC_MESSAGES/bino.mo
 
 %changelog
+* Wed Jul  6 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 1.1.1-2
+- FFmpeg dependency >= 0.7
+
+* Thu Jun  21 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 1.1.1-1
+- update to 1.1.1
+
 * Fri Mar  4 2011 Arkady L. Shane <ashejn@yandex-team.ru> - 0.9.1-1
 - update to 0.9.1
 
