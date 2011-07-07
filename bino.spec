@@ -47,6 +47,7 @@ make %{?_smp_mflags}
 install -D -m0644 %{SOURCE1} %{buildroot}%{_datadir}/applications/%{name}.desktop
 rm -r %{buildroot}%{_docdir}/bino
 rm -f %{buildroot}%{_infodir}/dir
+%find_lang %{name}
 
 
 %post
@@ -66,7 +67,7 @@ fi
 update-desktop-database -q
 
 
-%files
+%files -f %{name}.lang
 %defattr(-,root,root,-)
 %doc AUTHORS ChangeLog COPYING README
 %doc doc/*.html doc/*.jpg doc/*.png
@@ -74,11 +75,7 @@ update-desktop-database -q
 %{_mandir}/man1/%{name}.1*
 %{_infodir}/%{name}*
 %{_datadir}/applications/%{name}.desktop
-/usr/share/locale/cs/LC_MESSAGES/bino.mo
-/usr/share/locale/de/LC_MESSAGES/bino.mo
-/usr/share/locale/fr/LC_MESSAGES/bino.mo
-/usr/share/locale/pl/LC_MESSAGES/bino.mo
-/usr/share/locale/ru/LC_MESSAGES/bino.mo
+
 
 %changelog
 * Wed Jul  6 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 1.1.1-2
