@@ -11,7 +11,7 @@ License:            GPLv2
 
 BuildRequires:      qt4-devel
 BuildRequires:      glew-devel >= 1.5.0
-BuildRequires:      ffmpeg-devel >= 0.7
+BuildRequires:      ffmpeg-devel >= 0.8
 BuildRequires:      openal-devel
 BuildRequires:      pkgconfig
 BuildRequires:      autoconf automake libtool
