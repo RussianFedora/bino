@@ -1,7 +1,7 @@
 Summary:            Video Player with 3D and Multi-Display Video Support
 Name:               bino
-Version:            1.1.1
-Release:            2%{?dist}.R
+Version:            1.1.2
+Release:            1%{?dist}.R
 
 Source:             http://download.savannah.gnu.org/releases/%{name}/%{name}-%{version}.tar.xz
 Source1:            bino.desktop
@@ -78,6 +78,9 @@ update-desktop-database -q
 
 
 %changelog
+* Wed Aug 05 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 1.1.2-1.R
+- update to 1.1.2
+
 * Wed Jul  6 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 1.1.1-2
 - FFmpeg dependency >= 0.7
 
