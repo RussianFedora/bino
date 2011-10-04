@@ -1,9 +1,9 @@
 Summary:            Video Player with 3D and Multi-Display Video Support
 Name:               bino
-Version:            1.1.2
+Version:            1.2.0
 Release:            1%{?dist}.R
 
-Source:             http://download.savannah.gnu.org/releases/%{name}/%{name}-%{version}.tar.xz
+Source:             http://download.savannah.nongnu.org/releases-noredirect/%{name}/%{name}-%{version}.tar.xz
 Source1:            bino.desktop
 URL:                http://bino.nongnu.org/
 Group:              Applications/Multimedia
@@ -35,7 +35,6 @@ Bino is a video player with two special features:
 
 %build
 autoreconf -i
-export LDFLAGS="-lavcodec -lavutil -lGL -lX11"
 %configure --disable-silent-rules
 
 make %{?_smp_mflags}
@@ -45,7 +44,7 @@ make %{?_smp_mflags}
 %makeinstall
 
 install -D -m0644 %{SOURCE1} %{buildroot}%{_datadir}/applications/%{name}.desktop
-rm -r %{buildroot}%{_docdir}/bino
+rm -r %{buildroot}%{_docdir}/%{name}
 rm -f %{buildroot}%{_infodir}/dir
 %find_lang %{name}
 
@@ -75,9 +74,18 @@ update-desktop-database -q
 %{_mandir}/man1/%{name}.1*
 %{_infodir}/%{name}*
 %{_datadir}/applications/%{name}.desktop
-
+%{_datadir}/applications/mimeinfo.cache
+%{_datadir}/icons/hicolor/*/apps/%{name}.png
+%{_datadir}/icons/hicolor/icon-theme.cache
+%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 
 %changelog
+* Thu Sep 22 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 1.2.0-1.R
+- update to 1.2.0
+
+* Sun Aug 14 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 1.1.3-1.R
+- update to 1.1.3
+
 * Wed Aug 05 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 1.1.2-1.R
 - update to 1.1.2
 
