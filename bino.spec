@@ -76,7 +76,7 @@ update-desktop-database -q
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/mimeinfo.cache
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
-%{_datadir}/icons/hicolor/icon-theme.cache
+#%{_datadir}/icons/hicolor/icon-theme.cache
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 
 %changelog
