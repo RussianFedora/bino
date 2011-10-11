@@ -1,6 +1,6 @@
 Summary:            Video Player with 3D and Multi-Display Video Support
 Name:               bino
-Version:            1.2.0
+Version:            1.2.1
 Release:            1%{?dist}.R
 
 Source:             http://download.savannah.nongnu.org/releases-noredirect/%{name}/%{name}-%{version}.tar.xz
@@ -80,6 +80,9 @@ update-desktop-database -q
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 
 %changelog
+* Thu Oct 1 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 1.2.1-1.R
+- update to 1.2.1
+
 * Thu Sep 22 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 1.2.0-1.R
 - update to 1.2.0
 
