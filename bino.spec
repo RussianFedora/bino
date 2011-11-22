@@ -1,7 +1,8 @@
-Summary:            Video Player with 3D and Multi-Display Video Support
 Name:               bino
 Version:            1.2.1
-Release:            1%{?dist}.R
+Release:            2%{?dist}.R
+Summary:            Video Player with 3D and Multi-Display Video Support
+Summary(ru):        Видеоплеер с поддержкой 3D и многомониторных конфигураций
 
 Source:             http://download.savannah.nongnu.org/releases-noredirect/%{name}/%{name}-%{version}.tar.xz
 Source1:            bino.desktop
@@ -28,6 +29,12 @@ Bino is a video player with two special features:
 * support for 3D videos, with a wide variety of input and output formats.
 * support for multi-display video, e.g. for powerwalls, Virtual Reality
   installations and other multi-projector setups.
+
+%description -l ru
+Bino это видеоплеер с двумя специальными возможностями:
+* поддержка 3D видео с широким спектром выходных и выходных форматов.
+* поддержка многомониторного видео, т.е. для стен, устройств
+  виртуальной реальности и других многопроекторных установок.
 
 
 %prep
@@ -80,6 +87,9 @@ update-desktop-database -q
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 
 %changelog
+* Tue Nov 22 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 1.2.1-2.R
+- Added description in russian language
+
 * Thu Oct 1 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 1.2.1-1.R
 - update to 1.2.1
 
