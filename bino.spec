@@ -1,6 +1,6 @@
 Name:               bino
-Version:            1.3.0
-Release:            1%{?dist}.R
+Version:            1.3.1
+Release:            1%{?dist}
 Summary:            Video Player with 3D and Multi-Display Video Support
 Summary(ru):        Видеоплеер с поддержкой 3D и многомониторных конфигураций
 
@@ -21,6 +21,7 @@ BuildRequires:      desktop-file-utils
 BuildRequires:      texinfo
 BuildRequires:      libass-devel
 BuildRequires:      libX11-devel
+BuildRequires:      libGLEWmx
 
 Requires(preun):    /sbin/install-info
 Requires(post):     /sbin/install-info
@@ -55,6 +56,7 @@ cp %{SOURCE100} .
 install -D -m0644 %{SOURCE1} %{buildroot}%{_datadir}/applications/%{name}.desktop
 rm -r %{buildroot}%{_docdir}/%{name}
 rm -f %{buildroot}%{_infodir}/dir
+rm -f %{buildroot}%{_datadir}/icons/hicolor/icon-theme.cache
 %find_lang %{name}
 
 
@@ -89,8 +91,11 @@ update-desktop-database -q
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 
 %changelog
+* Sun Mar 11 2012 Vasiliy N. Glazov <vascom2@gmail.com> - 1.3.1-1.R
+- update to 1.3.1
+
 * Mon Jan 30 2012 Vasiliy N. Glazov <vascom2@gmail.com> - 1.3.0-1.R
-- update to 1.2.1
+- update to 1.3.0
 
 * Tue Nov 22 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 1.2.1-2.R
 - Added description in russian language
