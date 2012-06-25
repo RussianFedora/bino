@@ -1,12 +1,11 @@
 Name:               bino
-Version:            1.3.5
+Version:            1.4.0
 Release:            1%{?dist}
 Summary:            Video Player with 3D and Multi-Display Video Support
 Summary(ru):        Видеоплеер с поддержкой 3D и многомониторных конфигураций
 
 Source:             http://download.savannah.nongnu.org/releases-noredirect/%{name}/%{name}-%{version}.tar.xz
 Source1:            bino.desktop
-Source100:          README.RFRemix
 URL:                http://bino.nongnu.org/
 Group:              Applications/Multimedia
 License:            GPLv2
@@ -47,7 +46,6 @@ autoreconf -i
 %configure --disable-silent-rules
 
 make %{?_smp_mflags}
-cp %{SOURCE100} .
 
 
 %install
@@ -79,7 +77,7 @@ update-desktop-database -q
 
 %files -f %{name}.lang
 %defattr(-,root,root,-)
-%doc AUTHORS ChangeLog COPYING README README.RFRemix
+%doc AUTHORS ChangeLog COPYING README
 %doc doc/*.html doc/*.jpg doc/*.png
 %{_bindir}/%{name}
 %{_mandir}/man1/%{name}.1*
@@ -91,6 +89,9 @@ update-desktop-database -q
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 
 %changelog
+* Mon Jun 25 2012 Vasiliy N. Glazov <vascom2@gmail.com> - 1.4.0-1.R
+- update to 1.4.0
+
 * Wed Jun 13 2012 Vasiliy N. Glazov <vascom2@gmail.com> - 1.3.5-1.R
 - update to 1.3.5
 
