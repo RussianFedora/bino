@@ -1,6 +1,6 @@
 Name:               bino
 Version:            1.4.0
-Release:            1%{?dist}
+Release:            2%{?dist}
 Summary:            Video Player with 3D and Multi-Display Video Support
 Summary(ru):        Видеоплеер с поддержкой 3D и многомониторных конфигураций
 
@@ -21,6 +21,7 @@ BuildRequires:      texinfo
 BuildRequires:      libass-devel
 BuildRequires:      libX11-devel
 BuildRequires:      libGLEWmx
+BuildRequires:      gettext
 
 Requires(preun):    /sbin/install-info
 Requires(post):     /sbin/install-info
@@ -51,7 +52,8 @@ make %{?_smp_mflags}
 %install
 %makeinstall
 
-install -D -m0644 %{SOURCE1} %{buildroot}%{_datadir}/applications/%{name}.desktop
+#install -D -m0644 %{SOURCE1} %{buildroot}%{_datadir}/applications/%{name}.desktop
+desktop-file-install %{buildroot}%{_datadir}/applications/%{name}.desktop
 rm -r %{buildroot}%{_docdir}/%{name}
 rm -f %{buildroot}%{_infodir}/dir
 rm -f %{buildroot}%{_datadir}/icons/hicolor/icon-theme.cache
@@ -89,6 +91,9 @@ update-desktop-database -q
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 
 %changelog
+* Thu Oct 04 2012 Vasiliy N. Glazov <vascom2@gmail.com> 1.4.0-2.R
+- Added gettext to BR
+
 * Mon Jun 25 2012 Vasiliy N. Glazov <vascom2@gmail.com> - 1.4.0-1.R
 - update to 1.4.0
 
