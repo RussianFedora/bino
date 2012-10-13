@@ -1,6 +1,6 @@
 Name:               bino
-Version:            1.4.0
-Release:            2%{?dist}
+Version:            1.4.1
+Release:            1%{?dist}
 Summary:            Video Player with 3D and Multi-Display Video Support
 Summary(ru):        Видеоплеер с поддержкой 3D и многомониторных конфигураций
 
@@ -78,7 +78,6 @@ update-desktop-database -q
 
 
 %files -f %{name}.lang
-%defattr(-,root,root,-)
 %doc AUTHORS ChangeLog COPYING README
 %doc doc/*.html doc/*.jpg doc/*.png
 %{_bindir}/%{name}
@@ -91,6 +90,9 @@ update-desktop-database -q
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 
 %changelog
+* Sat Oct 13 2012 Vasiliy N. Glazov <vascom2@gmail.com> - 1.4.1-1.R
+- update to 1.4.1
+
 * Thu Oct 04 2012 Vasiliy N. Glazov <vascom2@gmail.com> 1.4.0-2.R
 - Added gettext to BR
 
