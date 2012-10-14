@@ -43,7 +43,7 @@ Bino это видеоплеер с двумя специальными возм
 %setup -q
 
 %build
-autoreconf -i
+#autoreconf -i
 %configure --disable-silent-rules
 
 make %{?_smp_mflags}
