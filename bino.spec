@@ -1,5 +1,5 @@
 Name:               bino
-Version:            1.4.1
+Version:            1.4.2
 Release:            1%{?dist}
 Summary:            Video Player with 3D and Multi-Display Video Support
 Summary(ru):        Видеоплеер с поддержкой 3D и многомониторных конфигураций
@@ -90,6 +90,9 @@ update-desktop-database -q
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 
 %changelog
+* Tue Jan 29 2012 Vasiliy N. Glazov <vascom2@gmail.com> - 1.4.2-1.R
+- update to 1.4.1
+
 * Sat Oct 13 2012 Vasiliy N. Glazov <vascom2@gmail.com> - 1.4.1-1.R
 - update to 1.4.1
 
