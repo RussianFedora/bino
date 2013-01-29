@@ -90,7 +90,7 @@ update-desktop-database -q
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 
 %changelog
-* Tue Jan 29 2012 Vasiliy N. Glazov <vascom2@gmail.com> - 1.4.2-1.R
+* Tue Jan 29 2013 Vasiliy N. Glazov <vascom2@gmail.com> - 1.4.2-1.R
 - update to 1.4.1
 
 * Sat Oct 13 2012 Vasiliy N. Glazov <vascom2@gmail.com> - 1.4.1-1.R
