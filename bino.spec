@@ -1,5 +1,5 @@
 Name:               bino
-Version:            1.4.2
+Version:            1.6.3
 Release:            1%{?dist}
 Summary:            Video Player with 3D and Multi-Display Video Support
 Summary(ru):        Видеоплеер с поддержкой 3D и многомониторных конфигураций
@@ -10,21 +10,24 @@ URL:                http://bino.nongnu.org/
 Group:              Applications/Multimedia
 License:            GPLv2
 
-BuildRequires:      qt4-devel
-BuildRequires:      glew-devel >= 1.5.0
-BuildRequires:      ffmpeg-devel >= 0.8
-BuildRequires:      openal-devel
+BuildRequires:      pkgconfig(Qt5)
+BuildRequires:      pkgconfig(glew) >= 1.5.0
+BuildRequires:      pkgconfig(libavcodec) >= 0.8
+BuildRequires:      pkgconfig(openal)
 BuildRequires:      pkgconfig
-BuildRequires:      autoconf automake libtool
+BuildRequires:      autoconf
+BuildRequires:      automake
+BuildRequires:      libtool
 BuildRequires:      desktop-file-utils
 BuildRequires:      texinfo
-BuildRequires:      libass-devel
-BuildRequires:      libX11-devel
+BuildRequires:      pkgconfig(libass)
+BuildRequires:      pkgconfig(x11)
 BuildRequires:      libGLEWmx
 BuildRequires:      gettext
+BuildRequires:      libquadmath-devel
 
-Requires(preun):    /sbin/install-info
-Requires(post):     /sbin/install-info
+Requires(preun):    info
+Requires(post):     info
 
 %description
 Bino is a video player with two special features:
@@ -78,8 +81,9 @@ update-desktop-database -q
 
 
 %files -f %{name}.lang
-%doc AUTHORS ChangeLog COPYING README
+%doc AUTHORS ChangeLog README
 %doc doc/*.html doc/*.jpg doc/*.png
+%license COPYING
 %{_bindir}/%{name}
 %{_mandir}/man1/%{name}.1*
 %{_infodir}/%{name}*
@@ -90,8 +94,11 @@ update-desktop-database -q
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 
 %changelog
+* Wed Jun 01 2016 Vasiliy N. Glazov <vascom2@gmail.com> - 1.6.3-1.R
+- update to 1.6.3
+
 * Tue Jan 29 2013 Vasiliy N. Glazov <vascom2@gmail.com> - 1.4.2-1.R
-- update to 1.4.1
+- update to 1.4.2
 
 * Sat Oct 13 2012 Vasiliy N. Glazov <vascom2@gmail.com> - 1.4.1-1.R
 - update to 1.4.1
@@ -108,7 +115,7 @@ update-desktop-database -q
 * Sat May 12 2012 Vasiliy N. Glazov <vascom2@gmail.com> - 1.3.4-1.R
 - update to 1.3.4
 
-* Mon May 01 2012 Vasiliy N. Glazov <vascom2@gmail.com> - 1.3.3-1.R
+* Tue May 01 2012 Vasiliy N. Glazov <vascom2@gmail.com> - 1.3.3-1.R
 - update to 1.3.3
 
 * Thu Mar 22 2012 Vasiliy N. Glazov <vascom2@gmail.com> - 1.3.2-1.R
@@ -123,7 +130,7 @@ update-desktop-database -q
 * Tue Nov 22 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 1.2.1-2.R
 - Added description in russian language
 
-* Thu Oct 1 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 1.2.1-1.R
+* Sat Oct 1 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 1.2.1-1.R
 - update to 1.2.1
 
 * Thu Sep 22 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 1.2.0-1.R
@@ -132,13 +139,13 @@ update-desktop-database -q
 * Sun Aug 14 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 1.1.3-1.R
 - update to 1.1.3
 
-* Wed Aug 05 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 1.1.2-1.R
+* Fri Aug 05 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 1.1.2-1.R
 - update to 1.1.2
 
 * Wed Jul  6 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 1.1.1-2
 - FFmpeg dependency >= 0.7
 
-* Thu Jun  21 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 1.1.1-1
+* Tue Jun  21 2011 Vasiliy N. Glazov <vascom2@gmail.com> - 1.1.1-1
 - update to 1.1.1
 
 * Fri Mar  4 2011 Arkady L. Shane <ashejn@yandex-team.ru> - 0.9.1-1
