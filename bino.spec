@@ -6,6 +6,8 @@ Summary(ru):        Видеоплеер с поддержкой 3D и мног�
 
 Source:             http://download.savannah.nongnu.org/releases-noredirect/%{name}/%{name}-%{version}.tar.xz
 Source1:            bino.desktop
+# debian patch to fix build against ffmpeg 2.9
+Patch0:             ffmpeg_2.9.patch
 URL:                http://bino.nongnu.org/
 Group:              Applications/Multimedia
 License:            GPLv2
@@ -48,6 +50,7 @@ Bino это видеоплеер с двумя специальными возм
 %build
 #autoreconf -i
 %configure --disable-silent-rules
+%patch0 -p1 -b .ffmpeg
 
 make %{?_smp_mflags}
 
