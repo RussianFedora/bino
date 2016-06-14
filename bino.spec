@@ -46,11 +46,11 @@ Bino это видеоплеер с двумя специальными возм
 
 %prep
 %setup -q
+%patch0 -p1 -b .ffmpeg
 
 %build
 #autoreconf -i
 %configure --disable-silent-rules
-%patch0 -p1 -b .ffmpeg
 
 make %{?_smp_mflags}
 
