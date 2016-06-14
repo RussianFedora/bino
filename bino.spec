@@ -1,6 +1,6 @@
 Name:               bino
 Version:            1.6.3
-Release:            1%{?dist}
+Release:            2%{?dist}
 Summary:            Video Player with 3D and Multi-Display Video Support
 Summary(ru):        Видеоплеер с поддержкой 3D и многомониторных конфигураций
 
@@ -94,6 +94,9 @@ update-desktop-database -q
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 
 %changelog
+* Tue Jun 14 2016 Arkady L. Shane <ashejn@russianfedora.pro> - 1.6.3-2.R
+- rebuilt against new ffmpeg
+
 * Wed Jun 01 2016 Vasiliy N. Glazov <vascom2@gmail.com> - 1.6.3-1.R
 - update to 1.6.3
 
