@@ -28,6 +28,8 @@ BuildRequires:      libGLEWmx
 BuildRequires:      gettext
 BuildRequires:      libquadmath-devel
 
+Requires:           hicolor-icon-theme
+
 Requires(preun):    info
 Requires(post):     info
 
