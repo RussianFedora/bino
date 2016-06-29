@@ -52,9 +52,9 @@ Bino это видеоплеер с двумя специальными возм
 
 %build
 #autoreconf -i
-%configure --disable-silent-rules
+%configure --disable-silent-rules --without-equalizer --without-lirc
 
-make %{?_smp_mflags}
+%make_build
 
 
 %install
@@ -67,22 +67,17 @@ rm -f %{buildroot}%{_infodir}/dir
 rm -f %{buildroot}%{_datadir}/icons/hicolor/icon-theme.cache
 %find_lang %{name}
 
-
 %post
-update-desktop-database -q
-if [ "$1" = 1 ]; then
-  /sbin/install-info --info-dir=%{_infodir} %{_infodir}/bino.info.gz || :
-fi
-
+/usr/bin/update-desktop-database &> /dev/null || :
+/sbin/install-info %{_infodir}/%{name}.info %{_infodir}//bino.info.gz || :
 
 %preun
-if [ "$1" = 0 ]; then
-  /sbin/install-info --delete --info-dir=%{_infodir} %{_infodir}/bino.info.gz || :
+if [ $1 = 0 ] ; then
+  /sbin/install-info --delete %{_infodir}/%{name}.info %{_infodir}/bino.info.gz || :
 fi
 
-
 %postun
-update-desktop-database -q
+/usr/bin/update-desktop-database &> /dev/null || :
 
 
 %files -f %{name}.lang
