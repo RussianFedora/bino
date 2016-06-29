@@ -58,13 +58,11 @@ Bino это видеоплеер с двумя специальными возм
 
 
 %install
-%makeinstall
+%make_install
 
-#install -D -m0644 %{SOURCE1} %{buildroot}%{_datadir}/applications/%{name}.desktop
 desktop-file-install %{buildroot}%{_datadir}/applications/%{name}.desktop
 rm -r %{buildroot}%{_docdir}/%{name}
 rm -f %{buildroot}%{_infodir}/dir
-rm -f %{buildroot}%{_datadir}/icons/hicolor/icon-theme.cache
 %find_lang %{name}
 
 %post
@@ -88,9 +86,7 @@ fi
 %{_mandir}/man1/%{name}.1*
 %{_infodir}/%{name}*
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/applications/mimeinfo.cache
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
-#%{_datadir}/icons/hicolor/icon-theme.cache
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 
 %changelog
